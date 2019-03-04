@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--命名空间应该是对应接口的包名+接口名-->
+<mapper namespace="com.metro.bi.busi.dao.algo.AlgorithmInfoDao">
+    <!--id应该是对应接口的包名+接口名-->
+    <!--获取所有书籍-->
+    <!--因为在spring.xml文件中的sqlSessionFactory中配置属性 <property name="typeAliasesPackage" value="com.metro.bi.busi.entity"></property>-->
+    <!--所以这里resultType="AlgorithmInfo"就只需要写类名，不需要完整路径-->
+    <select id="getAll" resultType="AlgorithmInfo">
+        select id,algo_name,algo_code,descrip,creater,create_time,register_type,submitee,submit_time,algo_version,serv_namespace,serv_url_name,serv_func_descrip,algo_file_name,algo_file_path,algo_impl_type,algo_type,algo_wdsl_file,algo_prior_level from tbl_algo_algorithm_info
+    </select>
+    <!--通过编号获取书籍-->
+    <select id="getById" resultType="AlgorithmInfo">
+        select id,algo_name,algo_code,descrip,creater,create_time,register_type,submitee,submit_time,algo_version,serv_namespace,serv_url_name,serv_func_descrip,algo_file_name,algo_file_path,algo_impl_type,algo_type,algo_wdsl_file,algo_prior_level from tbl_algo_algorithm_info where id = #{id};
+    </select>
+    <!--添加书籍-->
+    <insert id="add">
+        insert into tbl_algo_algorithm_info(id,algo_name,algo_code,descrip,creater,create_time,register_type,submitee,submit_time,algo_version,serv_namespace,serv_url_name,serv_func_descrip,algo_file_name,algo_file_path,algo_impl_type,algo_type,algo_wdsl_file,algo_prior_level) values (#{bid},#{bname},#{bprice});
+    </insert>
+    <!--删除书籍-->
+    <delete id="del">
+        delete from tbl_algo_algorithm_info where id = #{id};
+    </delete>
+
+    <!--更新书籍-->
+    <update id="update">
+        update tbl_algo_algorithm_info set register_type = #{registerType},algo_name = #{algoName} where bid = #{bid};
+    </update>
+</mapper>
