@@ -174,21 +174,23 @@ public class InvokeController {
                 case 3:
 //                    List<MethodParameterDef> orderedParam=new ArrayList<MethodParameterDef>();
                     MethodParameterDef tmp=null;
-                    if(defInList.size()>0){
-//                        bubblesort
-                        for(int i=0;i<defInList.size()-1;i++){
-                            for(int j=0;j<defInList.size()-1-i;j++){
-                                if(defInList.get(j).getDisplayOrder()>defInList.get(j+1).getDisplayOrder()){
-                                    tmp=defInList.get(j);
-                                    defInList.add(j,defInList.get(j+1));
-                                    defInList.add(j+1,tmp);
-                                }
-                            }
-                        }
-                    }
+//                    if(defInList.size()>0){
+////                        bubblesort
+//                        for(int i=0;i<defInList.size()-1;i++){
+//                            for(int j=0;j<defInList.size()-1-i;j++){
+//                                if(defInList.get(j).getDisplayOrder()>defInList.get(j+1).getDisplayOrder()){
+//                                    tmp=defInList.get(j);
+//                                    defInList.add(j,defInList.get(j+1));
+//                                    defInList.add(j+1,tmp);
+//                                }
+//                            }
+//                        }
+//                    }
                     CommandHelper.invoke(methodName,defInList,JsonUtil.fromJson2Map(params));
+                    break;
                 case 5:
                     JarHelper.invoke(algorithmInfo.getAlgoFileName(),JsonUtil.fromJson2Map(params));
+                    break;
                 default:break;
             }
 

@@ -79,6 +79,8 @@ public class SftpUtil {
     public String getHome() throws SftpException{
         return  sftp.getHome();
     }
+
+
     /**
      * 关闭连接 server
      */
@@ -349,8 +351,14 @@ public class SftpUtil {
 //        }
 
 //        sftp.download("/home/metro",fileName,"E:\\api\\logs\\"+fileName);
+        sftp.newDir("/qwe3123");
         sftp.logout();
     }
 
+    public String newDir(String dirName) throws SftpException{
+        sftp.getHome();
+        sftp.mkdir(sftp.getHome()+"/"+dirName);
+        return "";
+    }
 
 }

@@ -42,13 +42,13 @@ public class CommandHelper {
         Process process=null;
         StringBuffer commandLine=new StringBuffer();
         commandLine.append(commandName);
-        if(orderedParam.size()>0){
-            for(int i=0;i<orderedParam.size();i++){
-                commandLine.append(" " + params.get(orderedParam.get(i).getFormalParamName()));
-            }
-        }
-//        commandLine.append(" " + params.get("source"));
-//        commandLine.append(" " + params.get("destination"));
+//        if(orderedParam.size()>0){
+//            for(int i=0;i<orderedParam.size();i++){
+//                commandLine.append(" " + params.get(orderedParam.get(i).getFormalParamName()));
+//            }
+//        }
+        commandLine.append(" " + params.get("source"));
+        commandLine.append(" " + params.get("destination"));
 //        Object[] values=new Object[params.values().size()];
 //        int i=0;
 //        for(Object s:params.values()){
