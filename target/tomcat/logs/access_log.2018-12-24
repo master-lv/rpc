@@ -1,4 +1,0 @@
-0:0:0:0:0:0:0:1 - - [24/Dec/2018:09:09:40 +0800] "POST /rpc/invoke/s0 HTTP/1.1" 200 56 http-bio-8080-exec-2 632
-0:0:0:0:0:0:0:1 - - [24/Dec/2018:09:10:18 +0800] "POST /rpc/invoke/innerTest HTTP/1.1" 200 123 http-bio-8080-exec-3 1414
-0:0:0:0:0:0:0:1 - - [24/Dec/2018:09:16:10 +0800] "POST /rpc/invoke/innerTest HTTP/1.1" 200 59 http-bio-8080-exec-2 1423
-0:0:0:0:0:0:0:1 - - [24/Dec/2018:09:16:20 +0800] "POST /rpc/invoke/innerTest HTTP/1.1" 200 60 http-bio-8080-exec-3 1304
